@@ -1,0 +1,165 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>웹연습08</title>
+    <style>
+        * { margin: 0; padding: 0; }
+        body, html { width:100%; -ms-overflow-style:none;}
+         ::-webkit-scrollbar{ display:none; }
+        ul li { list-style: none;}
+        a { text-decoration: none; }
+        #hd { position: fixed; top:0; left:0; z-index:99; width:100%; height: 120px; background: rgba(0, 0, 0, .7)}
+        #ft { clear: both; width:100%; height: 120px; background: #333; color:#fff;}
+        .hd_wrap, .ft_wrap { width: 1280px; margin: 0 auto; }
+        #tnb { float: left; }
+        #tnb li { float:  padding:14px;}
+        #tnb li a { color: #333; }
+        #tnb li a:hover { color:#19d}
+        #gnb { clear: both; float: right; width:800px; }
+        #gnb li { float: left; width:200px;}
+        #gnb li a { color:#333; display: block; font-size: 14px; line-height: 36px; padding-left:24px; }
+        #gnb li a.dep1 { font-weight: 800; background: gold; }
+        #gnb li .sub { display: none; }
+        /* #gnb li .sub:hover { display: block; } */
+        #gnb:hover li .sub{ display: block; height: 192px; background: beige;  }
+        #gnb li .sub li {clear: both;}
+        #gnb li .sub li a { background: beige; }
+        .logo{ float: right; display: block; width:120px; height: 50px; margin-right: 80px; }
+        .breadcrumb { width: 100%; height: auto;}
+        #vs { width: 100%; }
+        #vs img { display: block; width:100%; height: auto;}
+        .loc { width:1280px; height: 42px; background: #333; color: #fff; position: absolute; bottom:0; left:calc(50% - 640px); z-index: 22; border-right: 1px solid #fff; }
+        /* left:50%; margin-left:-640px ---calc대신에 가능함 */
+        .loc li { float: left; height: 42px; line-height: 42px; }
+        .loc li a { display: block; line-height: 42px; padding: 0 20px; color: #fff; }
+        .loc details {display: block; line-height: 42px; }
+        .loc details p { background: #333; }
+        #content { clear: both; width:100%}
+        .page { clear: both; position: relative; width:100vw; height: 100vh; overflow: hidden; display: none; }
+        .page.target { display: block; }
+        .page_tit{ padding-left: calc(calc(100% - 1280px) / 2); line-height:6; }
+        .blank {clear: both; width:100%; min-height: 500px; }
+        #fnb { clear: both; width:100%; }
+        #fnb li { float: left; padding:14px; }
+        #fnb li a { display: block; border-left: 1px solid #555; border-right: 1px solid #111; border-top:1px solid #555;  line-height: 42px; min-width: 100px; text-align: center; color: #fff; }
+        .copyright { clear:both; line-height: 40px; }
+    
+    </style>
+</head>
+<body>
+   <header id="hd">
+       <div class="hd_wrap">
+           <nav id="tnb">
+               <ul class="menu">
+                   <li><a href="" class="dep1">학교소개</a></li>
+                   <li><a href="" class="dep1">알림마당</a></li>
+                   <li><a href="" class="dep1">학생마당</a></li>
+                   <li><a href="" class="dep1">교직원마당</a></li>
+               </ul>
+           </nav>
+           <nav id="gnb">
+               <ul class="menu">
+                   <li>
+                       <a href="" class="dep1">학교소개</a>
+                       <ul class="sub">
+                           <li><a href="sub1.html#page1">학교소개</a></li>
+                           <li><a href="sub1.html#page2">학교연혁</a></li>
+                           <li><a href="sub1.html#page3">교직원소개</a></li>
+                           <li><a href="sub1.html#page4">학교현황</a></li>
+                           <li><a href="sub1.html#page5">오시는길</a></li>
+                       </ul>
+                   </li>
+               </ul>
+               <ul class="menu">
+                <li>
+                    <a href="" class="dep1">알림마당</a>
+                    <ul class="sub">
+                        <li><a href="sub2.html#page1">공지사항</a></li>
+                        <li><a href="sub2.html#page2">가정통신문</a></li>
+                        <li><a href="sub2.html#page3">학교급식</a></li>
+                        <li><a href="sub2.html#page4">학교일정</a></li>
+
+                    </ul>
+                </li>
+            </ul>
+            <ul class="menu">
+                <li>
+                    <a href="" class="dep1">학생마당</a>
+                    <ul class="sub">
+                        <li><a href="sub3.html#page1">우리들마당</a></li>
+                        <li><a href="sub3.html#page2">방과후활동</a></li>
+                        <li><a href="sub3.html#page3">학교앨범</a></li>
+                        <li><a href="sub3.html#page4">자유게시판</a></li>
+                    </ul>
+                </li>
+            </ul>
+            <ul class="menu">
+                <li>
+                    <a href="" class="dep1">교직원마당</a>
+                    <ul class="sub">
+                        <li><a href="sub4.html#page1">교직원공지사항</a></li>
+                        <li><a href="sub4.html#page2">입학안내</a></li>
+                        <li><a href="sub4.html#page3">자료실</a></li>
+
+                    </ul>
+                </li>
+            </ul>                        
+           </nav>
+           <a href="index.html" class="logo"><img src="https://placehold.it/120x50" alt=""></a>
+       </div>
+   </header>
+   <div class="breadcrumb">
+       <figure id="vs"><img src="img/wide_banner_bg_01.jpg" alt="서브페이지배너"></figure>
+       <ul class="loc">
+           <li class="seq1"><a href="index.html">HOME</a></li>
+           <li class="seq2"><a href="sub1.html"">메뉴1</a></li>
+           <li class="seq3">
+               <details>
+                   <summary>메뉴1</summary>
+                   <p>
+                       <a href="">서브1</a>
+                       <a href="">서브2</a>
+                       <a href="">서브3</a>
+                       <a href="">서브4</a>
+                       <a href="">서브5</a>
+                   </p>
+               </details>
+            </li>
+       </ul>
+   </div>
+   <main id="content">
+       <div class="page" id="page1">
+           <h2 class="page_tit">페이지1</h2>
+       </div>
+       <div class="page" id="page2">
+           <h2 class="page_tit">페이지2</h2>
+       </div>
+       <div class="page" id="page3">
+           <h2 class="page_tit">페이지3</h2>
+       </div>
+       <div class="page" id="page4">
+           <h2 class="page_tit">페이지4</h2>
+       </div>
+       <div class="page" id="page5">
+           <h2 class="page_tit">페이지5</h2>
+       </div>
+   </main>
+   <div class="blank"></div>
+   <footer id="ft">
+       <div class="ft_wrap">
+           <nav id="fnb">
+               <ul>
+                   <li><a href="">푸터링크1</a></li>
+                   <li><a href="">푸터링크2</a></li>
+                   <li><a href="">푸터링크3</a></li>
+                   <li><a href="">푸터링크4</a></li>
+               </ul>
+           </nav>
+           <p class="copyright">여기는 카피라이트 요소입니다.</p>
+       </div>
+   </footer>
+</body>
+</html>
