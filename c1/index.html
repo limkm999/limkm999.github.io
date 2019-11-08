@@ -13,16 +13,14 @@
     @keyframes pic_ani1 {
         0% { opacity:0; }
         100% { opacity:1; }
-    }    
-    .mobile { display:none; } 
+    }
+    .mobile { display:none; }
     </style>
     <link rel="stylesheet" href="mobile.css" media="screen and (max-width:767px)">
     <link rel="stylesheet" href="tablet.css" media="screen and (min-width:768px) and (max-width:1024px)">
     <link rel="stylesheet" href="desktop.css" media="screen and (min-width:1025px)">
     <script src="https://code.jquery.com/jquery-latest.js"></script>
-    <script>
-    /* 여기에 스크립트를 작성해주세요  */
-    </script>
+    <script src="main.js"></script>
 </head>
 <body>
     <input type="checkbox" class="ck_item" id="lst_ck">
@@ -32,10 +30,38 @@
         <nav id="gnb">
             <h3 class="mobile mob_title1">MENU</h3>
             <ul class="mn">
-                <li class="item1"><a href="new.html">NEW</a></li>
-                <li class="item2"><a href="brand.html">BRAND</a></li>
-                <li class="item3"><a href="product.html">PRODUCT</a></li>
-                <li class="item4"><a href="store.html">STORE</a></li>
+                <li class="item1">
+                  <a href="new.html" class="dp1">NEW</a>
+                  <ul class="sub">
+                    <li><a href="">스킨</a></li>
+                    <li><a href="">마스크팩</a></li>
+                    <li><a href="">앰플</a></li>
+                  </ul>
+                </li>
+                <li class="item2">
+                  <a href="brand.html" class="dp1">BRAND</a>
+                  <ul class="sub">
+                    <li><a href="">올리브영</a></li>
+                    <li><a href="">헤라</a></li>
+                    <li><a href="">에뛰드</a></li>
+                  </ul>
+                </li>
+                <li class="item3">
+                  <a href="product.html" class="dp1">PRODUCT</a>
+                  <ul class="sub">
+                    <li><a href="">립스틱</a></li>
+                    <li><a href="">핸드크림</a></li>
+                    <li><a href="">향수</a></li>
+                  </ul>
+                </li>
+                <li class="item4">
+                  <a href="store.html" class="dp1">STORE</a>
+                  <ul class="sub">
+                    <li><a href="">둔산점</a></li>
+                    <li><a href="">전민점</a></li>
+                    <li><a href="">은행점</a></li>
+                  </ul>
+                </li>
             </ul>
             <label for="lst_ck" class="mobile close_btn"></label>
         </nav>
