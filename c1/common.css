@@ -22,7 +22,7 @@
 #gnb li a { display:block; font-size:1.6em; color:#fff; font-weight:bold; }
 #gnb li a.dp1 { height:50px; line-height:50px; text-align:center;  }
 #gnb li:hover a.dp1{ color:fff; }
-#gnb li .sub { /* display:none; */ visibility: hidden; opacity:0; transition:0.9s; }
+#gnb li .sub { /* display:none; */margin-left:-45px; visibility: hidden; opacity:0; transition:0.9s; }
 #gnb li:hover .sub { /* display:block; */  visibility: visible; opacity: 1; }
 #gnb li .sub li {  padding:10px 0 10px 0; background:#637505; text-align: center; }
 /* #gnb:hover li .sub { display:block; } */
